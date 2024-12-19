@@ -42,9 +42,9 @@ To get a local copy of the project up and running, follow these steps:
 
 ###Usage
 
-Enter a city or location in the input field.
-Click the "Search" button to fetch events.
-View the list of events displayed below the search bar.
+1.Enter a city or location in the input field.
+2.Click the "Search" button to fetch events.
+3.View the list of events displayed below the search bar.
 
 ###Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please fork the repository and submit a pull request.
