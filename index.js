@@ -29,8 +29,9 @@ async function fetchEvents(location) {
     errorMessage.classList.add("hidden"); // Hide error message
     showLoading(); // Show loading indicator
 
-    const apiKey = "YOUR_ACTUAL_API_KEY"; // Replace with your actual API key
-    const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=${encodeURIComponent(location)}&token=${apiKey}`;
+    const apiKey = "EN7FRNWQ7OZIFGRG3NT2"; // Your actual API key
+    const location = Nairobi;
+const url = `https://www.eventbriteapi.com/v3/events/search/?location.address=${encodeURIComponent(Nairobi)}&token=${EN7FRNWQ7OZIFGRG3NT2}`;
 
     try {
         const response = await fetch(url);
@@ -59,4 +60,38 @@ async function fetchEvents(location) {
 
 function displayEvents(events) {
     if (events.length === 0) {
-        showError("No events found for this location")
+        showError("No events found for this location");
+        return;
+    }
+
+    events.forEach(event => {
+        const eventItem = document.createElement("div");
+        eventItem.classList.add("event-item");
+
+        eventItem.innerHTML = `
+            <h3>${event.name}</h3>
+            <p><strong>Starts:</strong> ${new Date(event.start).toLocaleString()}</p>
+            <p><strong>Venue:</strong> ${event.venue}</p>
+            <a href="${event.url}" target="_blank">More Info</a>
+        `;
+
+        eventList.appendChild(eventItem);
+    });
+}
+
+function showError(message) {
+    errorMessage.textContent = message;
+    errorMessage.classList.remove("hidden");
+}
+
+function clearResults() {
+    eventList.innerHTML = ""; // Clear event list
+    errorMessage.classList.add("hidden"); // Hide error message
+    locationInput.value = ""; // Clear the input field
+}
+
+
+
+
+
+
