@@ -49,7 +49,7 @@ To get a local copy of the project up and running, follow these steps:
 ###Contributing
 Contributions are welcome! If you have suggestions for improvements or new features, please fork the repository and submit a pull request.
 
-License
+###License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgments
